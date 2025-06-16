@@ -19,6 +19,8 @@
             <a href="Greenhouse.html">Greenhouse Gases</a>
             <a href="Deforestation.html">Deforestation</a>
         </nav>
+        <button id="mode-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+
     </header>
 
     <main>
@@ -27,7 +29,7 @@
             <p>Greenhouse gases, commonly referred to as 'GHGs,' are gases present in Earth's atmosphere that trap heat.
                 They allow sunlight to enter but prevent some heat from escaping, similar to the function of a
                 greenhouse.</p>
-                <img src="greenhouse-gases.png" alt="GreenhouseGases " class="responsive-img">
+            <img src="greenhouse-gases.png" alt="GreenhouseGases " class="responsive-img">
         </section>
         </section>
 
@@ -60,6 +62,26 @@
 
         </section>
     </main>
+
+    <script>
+        const toggleBtn = document.getElementById('mode-toggle');
+        const body = document.body;
+        const header = document.querySelector('header');
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+        const cta = document.querySelector('.cta');
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            header.classList.toggle('dark-mode');
+            cta.classList.toggle('dark-mode');
+            sections.forEach(section => section.classList.toggle('dark-mode'));
+            navLinks.forEach(link => link.classList.toggle('dark-mode'));
+
+            // Toggle icon
+            toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 
 </html>
