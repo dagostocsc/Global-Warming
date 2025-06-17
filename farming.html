@@ -18,6 +18,7 @@
                 <a href="Greenhouse.html">Greenhouse Gases</a>
                 <a href="Deforestation.html">Deforestation</a>
             </nav>
+            <button id="mode-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
         </header>
             <img src="Images/cow.png" alt="picture of cow" class="farming-cow"/>
             <section class="farming-how-container">
@@ -38,6 +39,26 @@
                 <p class="farming-midigate-text"></p>
             </section>
         </main>
+
+        <script>
+        const toggleBtn = document.getElementById('mode-toggle');
+        const body = document.body;
+        const header = document.querySelector('header');
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+        const cta = document.querySelector('.cta');
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            header.classList.toggle('dark-mode');
+            cta.classList.toggle('dark-mode');
+            sections.forEach(section => section.classList.toggle('dark-mode'));
+            navLinks.forEach(link => link.classList.toggle('dark-mode'));
+
+            // Toggle icon
+            toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
     </body>
     
 </body>

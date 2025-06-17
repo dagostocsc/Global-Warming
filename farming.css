@@ -78,3 +78,53 @@ nav a:hover {
     font-size: 24px;
     
 }
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header.dark-mode {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+nav a.dark-mode {
+    color: #ffffff;
+}
+
+nav a.dark-mode:hover {
+    background-color: #333;
+}
+
+section.dark-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.cta.dark-mode {
+    background-color: #2a2a2a;
+    border-left-color: #ff6b6b;
+    color: #ffffff;
+}
+
+.cta.dark-mode p {
+    color: #ff6b6b;
+}
+
+button#mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+}
+
+body.dark-mode button#mode-toggle {
+    color: #ffce00;
+}
